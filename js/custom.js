@@ -5,7 +5,7 @@ $(function(){
     var toggleNav = function(){
     	$(".navbar-collapse").slideToggle();
     	if(window.matchMedia("(max-width: 767px)").matches) {
-	    	$("body").toggleClass("collapsed");
+	    	$("body").toggleClass("menu-open");
 			if($(document).scrollTop() === 0){
 				$("header").toggleClass("down");
 				$("body").toggleClass("locked");
@@ -42,13 +42,14 @@ $(function(){
 	});
 
 
-    // Remove mobile menu states when resized to desktop 
+    // Remove mobile menu and navbar states when resized to desktop
 
     $(window).resize(function(){
     	if(window.matchMedia("(min-width: 768px)").matches) {
-    		if($("body").hasClass("collapsed")){
+    		$(".navbar-header").removeClass("smaller");
+    		if($("body").hasClass("menu-open")){
 	    		$(".navbar-collapse").slideUp();
-	    		$("body").removeClass("collapsed, locked");
+	    		$("body").removeClass("menu-open locked");
 	    		$("header").removeClass("down");
 	    	}
     	}
