@@ -10,8 +10,5 @@ Two not so obvious features of the page are a responsive navbar with two states 
 
 I had plenty of fun with this challenge and I really hope you enjoy it as well!
 
-For reference, here's the code challenge I did for Genome Digital back in January. I created a bit more Javascript there:
-
-https://github.com/GxDesign/Genome-Ui-Challenge/
 
 
