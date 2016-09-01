@@ -40,7 +40,7 @@ h2, h3 {
 }
 
 div, p, li, a {
-	font-family: 'Quicksand', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   color: #ccc;
 }
 
@@ -52,7 +52,7 @@ hr {
 
 .btn-rounded, .btn-rounded:focus {
   font-family: 'Annie Use Your Telescope', cursive;
-	background: none;
+  background: none;
   color: #fff;
   border: 2px solid;
   border-radius: 50px;
@@ -77,11 +77,11 @@ a.btn-rounded:hover {
 button:hover { cursor: pointer; }
 
 .flex {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-wrap: wrap;
-	    flex-wrap: wrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 nav, header, section, footer {
@@ -332,7 +332,7 @@ header.down {
 }
 
 .wave-4 {
-	/* using class as workaround on nth of type issue with icebergs */
+  /* using class as workaround on nth of type issue with icebergs */
   background-image: url("../img/scenery/wave-4.png");
   -webkit-animation: fourth-wave 6s ease-in-out infinite;
           animation: fourth-wave 6s ease-in-out infinite;
