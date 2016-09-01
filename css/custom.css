@@ -84,8 +84,13 @@ button:hover { cursor: pointer; }
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-flex-direction: row;
+   flex-direction: row;
+   -webkit-flex-wrap: wrap;
+   flex-wrap: wrap;
+   /* Or do it all in one line with flex flow */
+   -webkit-flex-flow: row wrap;
+   flex-flow: row wrap;
 }
 
 nav, header, section, footer {
@@ -725,9 +730,8 @@ footer .form-control {
   color: #ff4343;
 }
 
-#footer-menu .flex {
-  flex-wrap: wrap;
-}
+
+
 
 
 
