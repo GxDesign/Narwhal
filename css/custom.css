@@ -5,12 +5,15 @@ body {
 }
 
 body.collapsed { 
-  overflow: hidden; 
   background-position: 0 0;
 }
 
+body.locked {
+  overflow: hidden; 
+}
+
 body {
-  background: #292929 url("../img/stars-bg.png") no-repeat;
+  background: #292929 url("../img/scenery/stars-bg.png") no-repeat;
   background-size: 100% auto;
   background-position: 0 -400px;
   transition: 0.5s background-position ease-in-out;
@@ -47,7 +50,7 @@ hr {
   border-color: #9357ff;
 }
 
-.btn-rounded {
+.btn-rounded, .btn-rounded:focus {
   font-family: 'Annie Use Your Telescope', cursive;
 	background: none;
   color: #fff;
@@ -58,8 +61,12 @@ hr {
   letter-spacing: 2px;
 }
 
+a.btn-rounded:hover {
+  text-decoration: none
+}
+
 @media (min-width: 768px) {
-  .btn-rounded { font-size: 1.7em; }
+  .btn-rounded, .btn-rounded:focus { font-size: 1.7em; }
 }
 
 .btn-rounded:hover  { 
@@ -85,6 +92,32 @@ nav, header, section, footer {
 
 /* NAV
 ================================*/
+.navbar-collapse { border-top: 0; }
+
+.navbar-header {
+  padding: 15px;
+  transition: 0.2s padding ease-in-out;
+}
+
+.navbar-header.smaller {
+  padding: 7px 15px;
+}
+
+.navbar-brand, .navbar-brand:hover  {
+  text-transform: uppercase;
+  color: #84ddff;
+}
+
+.navbar { min-height: 30px; }
+.navbar button, .navbar-brand {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  height: auto;
+}
+
+
 
 @media (min-width: 768px) {
   .navbar {
@@ -93,6 +126,9 @@ nav, header, section, footer {
 }
 
 @media (max-width: 767px) {
+  body.collapsed .navbar-collapse {
+    background: rgba(24, 31, 74, 0.85);
+  }
   .navbar-header { background: #222; }
   .navbar-nav { margin-top: 0; margin-bottom: 0; }
 
@@ -100,6 +136,7 @@ nav, header, section, footer {
     background: rgba(0,0,0, 0.6);
     color: #84ddff;
   }
+
   .navbar-nav li a {
     opacity: 0;
     background: rgba(0,0,0, 0.4);
@@ -139,7 +176,7 @@ header {
 
 
 
-body.collapsed header {
+header.down {
   margin-top: 100vh;
 }
 
@@ -278,26 +315,26 @@ body.collapsed header {
 }
 
 .wave:nth-of-type(1) {
-  background-image: url("../img/wave-1.png");
+  background-image: url("../img/scenery/wave-1.png");
   -webkit-animation: first-wave 8s ease-in-out infinite;
           animation: first-wave 8s ease-in-out infinite;
 }
 
 .wave:nth-of-type(2) {
-  background-image: url("../img/wave-2.png");
+  background-image: url("../img/scenery/wave-2.png");
   -webkit-animation: second-wave 5s ease-in-out infinite;
           animation: second-wave 5s ease-in-out infinite;
 }
 
 .wave:nth-of-type(3) {
-  background-image: url("../img/wave-3.png");
+  background-image: url("../img/scenery/wave-3.png");
   -webkit-animation: third-wave 6s ease-in-out infinite;
           animation: third-wave 6s ease-in-out infinite;
 }
 
 .wave-4 {
 	/* using class as workaround on nth of type issue with icebergs */
-  background-image: url("../img/wave-4.png");
+  background-image: url("../img/scenery/wave-4.png");
   -webkit-animation: fourth-wave 6s ease-in-out infinite;
           animation: fourth-wave 6s ease-in-out infinite;
 }
@@ -436,7 +473,7 @@ body.collapsed header {
   width: 100%;
   bottom:0;
   left:0;
-  background: url("../img/cave-top.png") no-repeat right bottom;
+  background: url("../img/scenery/cave-top.png") no-repeat right bottom;
   background-size: 100% auto;
 }
 
@@ -470,7 +507,7 @@ a.anchor { display: block; transform: translateY(-50px) }
   #summary .text {
     text-align: left;
      padding: 80px 80px 150px;
-  }
+   }
 }
 
 #summary h2 {
@@ -489,7 +526,7 @@ a.anchor { display: block; transform: translateY(-50px) }
 
 #features {
   background-color: #1a2f50;
-  padding: 300px 0 150px ;
+  padding: 300px 0 20px ;
   position: relative;
 }
 
@@ -500,7 +537,7 @@ a.anchor { display: block; transform: translateY(-50px) }
   width: 100%;
   top:0;
   left:0;
-  background: url("../img/cave-bottom.png") no-repeat right top;
+  background: url("../img/scenery/cave-bottom.png") no-repeat right top;
   background-size: 100% auto;
 }
 
@@ -533,9 +570,22 @@ a.anchor { display: block; transform: translateY(-50px) }
 /* TEAM
 ================================*/
 
+
 #team {
-  padding: 60px 0;
-  background: url("../img/sand.png") repeat;
+  padding: 200px 0 150px;
+  position: relative;
+  background: url("../img/scenery/sand.png") repeat;
+}
+
+#team:before {
+  content: '';
+  position: absolute;
+  height:100%;
+  width: 100%;
+  top:0;
+  left:0;
+  background: url("../img/scenery/sand-top.png") no-repeat right top;
+  background-size: 100% auto;
 }
 
 #team div[class^=col-] {
@@ -559,13 +609,15 @@ a.anchor { display: block; transform: translateY(-50px) }
 }
 
 
-
+.team-member i {
+      font-size: 2em;
+}
 
 /* LOGOS BANNER
 ================================*/
 
 #logos-banner {
-  background: blue;
+  background: #464646;
   padding: 0 20px;
 }
 
@@ -595,10 +647,75 @@ a.anchor { display: block; transform: translateY(-50px) }
 
 /* FOOTER 
 ================================*/
+
+footer {
+  background: url("../img/scenery/footer-lodyas.png") repeat;
+}
+
+footer .form-control {
+    background: rgba(255,255,255, 0.1);
+    border-color: #222;
+}
+
+footer h2 {
+    font-family: "Annie Use Your Telescope", cursive;
+    margin-top: 60px;
+    color: #84ddff;
+    font-size: 3em;
+}
+
+
+#contact form { margin-bottom: 60px; }
+
 #contact {
   padding: 60px 0;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  footer h2 {font-size: 5em;}
+  #contact { text-align: left; }
 }
 
 #contact h2 + p {
   padding-bottom: 60px;
 }
+
+#footer-menu ul li:first-child {
+  color: #9357ff;
+  text-transform: uppercase;
+  font-weight: bold
+}
+
+footer .social {
+  font-size: 1.3em;
+}
+
+
+footer h4 {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+footer .form-control {
+  color: #fff;
+}
+
+.form-control.invalid {
+  border-color: #ff4343;
+}
+
+.contact-thanks {
+  color: #84ddff;
+  font-size: 1.2em;
+  display: none;
+}
+
+
+.invalid-msg {
+  color: #ff4343;
+}
+
+
+
+
