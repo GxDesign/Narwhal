@@ -126,7 +126,7 @@ nav, header, section, footer {
 }
 
 @media (max-width: 767px) {
-  body.collapsed .navbar-collapse {
+  body:not(.locked).collapsed .navbar-collapse {
     background: rgba(24, 31, 74, 0.85);
   }
   .navbar-header { background: #222; }
@@ -138,7 +138,6 @@ nav, header, section, footer {
   }
 
   .navbar-nav li a {
-    opacity: 0;
     background: rgba(0,0,0, 0.4);
     font-size: 2em;
     padding:30px  0;

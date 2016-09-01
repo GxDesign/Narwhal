@@ -4,10 +4,12 @@ $(function(){
 	// Toggle navbar
     var toggleNav = function(){
     	$(".navbar-collapse").slideToggle();
-		$("body").toggleClass("collapsed");
-		if($(document).scrollTop() === 0){
-			$("header").toggleClass("down");
-			$("body").toggleClass("locked");
+    	if(window.matchMedia("(max-width: 767px)").matches) {
+	    	$("body").toggleClass("collapsed");
+			if($(document).scrollTop() === 0){
+				$("header").toggleClass("down");
+				$("body").toggleClass("locked");
+			}
 		}
 	}
 
@@ -32,7 +34,20 @@ $(function(){
 				$(".navbar-header").addClass("smaller");
 			}
 		}
+
+
 	});
+
+    $(window).resize(function(){
+    	if(window.matchMedia("(min-width: 768px)").matches) {
+    		if($("body").hasClass("collapsed")){
+	    		$(".navbar-collapse").slideUp();
+	    		$("body").removeClass("collapsed, locked");
+	    		$("header").removeClass("down");
+	    	}
+    	}
+    });
+	
 
 	// Smooth Scroll
 
@@ -104,6 +119,6 @@ $(function(){
 		validateForm($(this).data("for"));
 	});
 
-
+    
 
 })
