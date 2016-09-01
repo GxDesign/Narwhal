@@ -19,6 +19,10 @@ body {
   transition: 0.5s background-position ease-in-out;
 }
 
+section {
+  padding: 15px;
+}
+
 
 img {
     max-width: 100%;
@@ -197,7 +201,7 @@ header.down {
 }
 
 #header-text h1 {
-  font-size: 1.7em;
+  font-size: 1.2em;
   color: #84ddff;
 }
 
@@ -525,8 +529,14 @@ a.anchor { display: block; transform: translateY(-50px) }
 
 #features {
   background-color: #1a2f50;
-  padding: 300px 0 20px ;
+  padding: 120px 0 20px ;
   position: relative;
+}
+
+@media (min-width: 768px) {
+  #features {
+    padding: 300px 0 20px ;
+  }
 }
 
 #features:before {
@@ -713,6 +723,10 @@ footer .form-control {
 
 .invalid-msg {
   color: #ff4343;
+}
+
+#footer-menu .flex {
+  flex-wrap: wrap;
 }
 
 
