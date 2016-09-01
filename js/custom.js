@@ -33,10 +33,16 @@ $(function(){
 			} else {
 				$(".navbar-header").addClass("smaller");
 			}
+		} else {
+			// Ensure that the navbar begins closed when resizing from desktop to mobile
+			$(".navbar-collapse").slideUp();
 		}
 
 
 	});
+
+
+    // Remove mobile menu states when resized to desktop 
 
     $(window).resize(function(){
     	if(window.matchMedia("(min-width: 768px)").matches) {
