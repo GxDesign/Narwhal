@@ -678,6 +678,11 @@ footer h2 {
     font-size: 3em;
 }
 
+#footer-menu a:hover {
+    color: #84ddff;
+    text-decoration: none;
+}
+
 
 #contact form { margin-bottom: 60px; }
 
