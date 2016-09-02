@@ -620,6 +620,7 @@ a.anchor { display: block; transform: translateY(-50px) }
 
 #team .img-circle {
   max-width: 170px;
+  border: 6px solid;
 }
 
 
